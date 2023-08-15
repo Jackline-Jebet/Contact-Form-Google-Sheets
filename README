@@ -1,6 +1,6 @@
-1. Create a google sheet
-2. Setup google Apps Script
- - Click on Extensions > App Script
+1. Create a google sheet:
+2. Setup google Apps Script:
+ - Click on Extensions > App Script:
  - Remove any code in the script and repalce with the code below:
 
 var sheetName = 'Sheet1'; // Change this if your sheet is named differently
@@ -40,16 +40,64 @@ function doPost(e) {
     }
 }
 
-  - Save the Script
-  - Run the intialSetup function from the Apps Script editor. The first time you run it, you'll need to provide permissions to the script to manage your Google Sheets data.
+  - Save the Script:
+  - Run the intialSetup function from the Apps Script editor. The first time you run it, you'll need to provide permissions to the script to manage your Google Sheets data:
 
-3. Deploy as a Web App
+3. Deploy as a Web App:
    - In the Apps Script editor, click on Publish > Deploy as web app
    - For "Who has access to the app", select "Anyone"
    - Click Deploy
    - Copy the "web App URL" provided.
 
-4. Create Your HTML Form
-5. Test your form 
+4. Create Your HTML Form:
+5. Test your form:
    - submit a test through your contact form to see if data appear in the google sheet
+
+********************************************************************************************
+A.  Create Remote Repository From the Terminal 
+
+    1. Generate and copy token from Github:
+       Developer settings > Personal access tokens > Generate new token
+      
+    2. Create a new repository in terminal with:
+       curl -u "your_github_username:your_personal_access_token" https://api.github.com/user/repos -d '{"name":"your_repo_name"}'
+    
+    3. Add it as aremote to your local repository with:
+       git remote add origin https://github.com/your_github_username/your_repo_name.git
+
+    4. Initialize the project as a git repository if its not initialized with:
+       git init
+
+    5. Add project files to the repository with:
+       git add .
+
+    6. Commit the files:
+       git commit -m "Initial commit"
+
+    7. Push your commits to the remote repository:
+       git push -u origin master
+
+
+B. Push Your project To none-initialized Remote Repository/ If you  didn't clone your repository.
+
+   1. Create a New Repository on GitHub:
+      Then copy the URL
+
+   2. Navigate to your project directory in your terminal or command prompt:
+      cd path/to/your/project
+
+   3. Initialize the project as a git repository if its not initialized with:
+      git init
+
+   4. Add project files to the repository with:
+       git add .
+
+   5. Commit the files:
+       git commit -m "Initial commit"
+  
+   6. Link the remote repository to your local repository using:
+      git remote add origin https://github.com/yourusername/your-repository-name.git
+
+   7. Push your commits to the remote repository:
+       git push -u origin master
 
